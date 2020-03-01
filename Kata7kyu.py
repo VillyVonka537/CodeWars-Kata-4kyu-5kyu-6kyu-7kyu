@@ -1,3 +1,22 @@
+######################################################################################################################
+# Task
+# Given a string s, find out if its characters can be rearranged to form a palindrome.
+# Example
+# For s = "aabb", the output should be true.
+# We can rearrange "aabb" to make "abba", which is a palindrome.
+# Input/Output
+# [input] string s
+# A string consisting of lowercase English letters.
+
+def palindrome_rearranging(s):
+    count = 0
+    for i in set(s):
+        if s.count(i) % 2 != 0:
+            count += 1
+    if count > 1:
+        return False
+    else:
+        return True
 
 ######################################################################################################################
 
