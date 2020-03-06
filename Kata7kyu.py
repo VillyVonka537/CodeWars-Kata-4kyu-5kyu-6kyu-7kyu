@@ -1,3 +1,24 @@
+# Introduction and Warm-up (Highly recommended)
+# Playing With Lists/Arrays Series
+# Task
+# Given an array/list [] of integers , Find the product of the k maximal numbers.
+# Notes
+# Array/list size is at least 3 .
+# Array/list's numbers Will be mixture of positives , negatives and zeros
+# Repetition of numbers in the array/list could occur.
+# Input >> Output Examples
+# maxProduct ({4, 3, 5}, 2) ==>  return (20)
+
+def max_product(lst, n_largest_elements):
+    dCtver1 = sorted(lst,reverse=True)
+    dCtver2 = dCtver1[0:n_largest_elements]
+    n_largest_elements = 1
+    for i in dCtver2:
+        n_largest_elements *= i
+    return n_largest_elements
+
+######################################################################################################################
+
 # Task
 # Given a number , Return _The Maximum number _ could be formed from the digits of the number given .
 # Notes
@@ -17,7 +38,6 @@ def max_number(n):
     new2 = ''.join(str(i) for i in new) #в джоине идем по списку и каждую итерацию преобразовываем в str по списку и записываем все в строку
     new2 = int(new2)    #преобразовываем в int
     return new2
-
 
 ######################################################################################################################
 
@@ -64,7 +84,6 @@ def remove(s):
     count = "!"*outLen
     newS += count
     return newS
-
 
 ######################################################################################################################
 # Task
