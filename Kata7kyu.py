@@ -1,3 +1,71 @@
+# Task
+# Given a number , Return _The Maximum number _ could be formed from the digits of the number given .
+# Notes
+# Only Natural numbers passed to the function , numbers Contain digits [0:9] inclusive !alt !alt
+# Digit Duplications could occur , So also consider it when forming the Largest !alt
+# Input >> Output Examples:
+# maxNumber (213) ==> return (321)
+
+def max_number(n):
+    return int(''.join(sorted(str(n), reverse=True)))
+
+# solution in details
+def max_number(n):
+    new = str(n)    #меняем тип
+    new = list(map(int, new)) #преобразовываем строку в список чисел
+    new = sorted(new, reverse=True) #сортируем по убывани (впринципе задача решена)
+    new2 = ''.join(str(i) for i in new) #в джоине идем по списку и каждую итерацию преобразовываем в str по списку и записываем все в строку
+    new2 = int(new2)    #преобразовываем в int
+    return new2
+
+
+######################################################################################################################
+
+# Find the first non-consecutive number
+# 1454490% of 1,3683,461 of 9,718thecodeite
+# Python
+# TRAIN AGAINNEXT KATA
+# Details
+# Solutions
+# Forks (11)
+# Discourse (51)
+# Collect|
+# Your task is to find the first element of an array that is not consecutive.
+# By not consecutive we mean not exactly 1 larger than the previous element of the array.
+# E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+# If the whole array is consecutive then return null2.
+# The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
+
+def first_non_consecutive(a):
+    i = a[0] 
+    for e in a:
+        if e != i:
+            return e
+        i += 1
+    return None
+
+######################################################################################################################
+
+# Description:
+# Remove all exclamation marks from sentence except at the end.
+
+# Examples
+# remove("Hi!") == "Hi!"
+# remove("Hi!!!") == "Hi!!!"
+# remove("!Hi") == "Hi"
+# remove("!Hi!") == "Hi!"
+# remove("Hi! Hi!") == "Hi Hi!"
+# remove("Hi") == "Hi"
+
+def remove(s):
+    stripped = s.rstrip("!")
+    newS = s.replace("!", "")
+    outLen = len(s) - len(stripped)
+    count = "!"*outLen
+    newS += count
+    return newS
+
+
 ######################################################################################################################
 # Task
 # Given a string s, find out if its characters can be rearranged to form a palindrome.
