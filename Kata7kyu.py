@@ -1,17 +1,4 @@
-#In this Kata, you will be given a lower case string and your task will be to remove k characters from 
-#that string using the following rule:
-#For example: 
-#solve('abracadabra', 1) = 'bracadabra' # remove the leftmost 'a'.
-#solve('abracadabra', 2) = 'brcadabra'  # remove 2 'a' from the left.
-#solve('abracadabra', 6) = 'rcdbr'      # remove 5 'a', remove 1 'b' 
-
-def solve(st,k): 
-    for letter in sorted(st)[:k]:
-        st = st.replace(letter,'',1)
-    return st
-
 ######################################################################################################################
-
 
 # Introduction and Warm-up (Highly recommended)
 # Playing With Lists/Arrays Series
@@ -83,7 +70,6 @@ def first_non_consecutive(a):
 
 # Description:
 # Remove all exclamation marks from sentence except at the end.
-
 # Examples
 # remove("Hi!") == "Hi!"
 # remove("Hi!!!") == "Hi!!!"
@@ -129,7 +115,6 @@ def palindrome_rearranging(s):
 # '0' : uninfected
 # '1' : infected
 # 'X' : ocean⚠️ 
-
 
 def infected(s):
     lands = s.split('X')
@@ -184,3 +169,15 @@ def remove_duplicate_words(s):
     return " ".join(z)
 
 ######################################################################################################################
+
+#In this Kata, you will be given a lower case string and your task will be to remove k characters from 
+#that string using the following rule:
+#For example: 
+#solve('abracadabra', 1) = 'bracadabra' # remove the leftmost 'a'.
+#solve('abracadabra', 2) = 'brcadabra'  # remove 2 'a' from the left.
+#solve('abracadabra', 6) = 'rcdbr'      # remove 5 'a', remove 1 'b' 
+
+def solve(st,k): 
+    for letter in sorted(st)[:k]:
+        st = st.replace(letter,'',1)
+    return st
