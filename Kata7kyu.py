@@ -1,3 +1,18 @@
+######################################################################################################################
+
+# If　a = 1, b = 2, c = 3 ... z = 26
+# Then l + o + v + e = 54
+# and f + r + i + e + n + d + s + h + i + p = 108
+# So friendship is twice stronger than love :-)
+# The input will always be in lowercase and never be empty.
+#test.assert_equals(words_to_marks('attitude'), 100)
+
+def words_to_marks(s):
+    base = ord('a') - 1
+    return sum(ord(l) - base for l in s)
+
+######################################################################################################################
+
 #Kata 6 kyu
 # You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. 
 # We want to create the text that should be displayed next to such an item.
