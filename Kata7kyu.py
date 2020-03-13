@@ -1,5 +1,24 @@
 ######################################################################################################################
 
+# Count the number of occurrences of each character and return it as a list of tuples in order of appearance.
+# Example:
+
+def ordered_count(input):
+    return [(x, input.count(x)) for x in sorted(set(input), key=input.index)]
+
+######################################################################################################################
+
+#Kata 6 kyu: Return 1, 2, 3 randomly
+# You have function one_two (oneTwo for Java) that returns 1 or 2 with 50% chance. one_two is already defined in a global scope and can be called everywhere.
+# Your goal is to create function one_two_three (oneTwoThree for Java) that returns 1, 2 or 3 with equal probability using only one_two function.
+# Do not try to cheat returning repeating non-random sequences. There is randomness test especially for this case.
+
+def one_two_three():
+    r = one_two() * 3 + one_two()
+    return 1 if r == 4 else 2 if r == 5 else 3 if r == 7 else one_two_three()
+
+######################################################################################################################
+
 # If　a = 1, b = 2, c = 3 ... z = 26
 # Then l + o + v + e = 54
 # and f + r + i + e + n + d + s + h + i + p = 108
@@ -13,7 +32,7 @@ def words_to_marks(s):
 
 ######################################################################################################################
 
-#Kata 6 kyu
+#Kata 6 kyu: Who likes it?
 # You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. 
 # We want to create the text that should be displayed next to such an item.
 # Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who
