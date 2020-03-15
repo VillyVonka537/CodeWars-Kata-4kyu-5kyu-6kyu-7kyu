@@ -1,3 +1,15 @@
+# Hex Word Sum
+# Description
+# As hex values can include letters A through to F, certain English words can be spelled out, such as CAFE, BEEF, or FACADE. 
+# This vocabulary can be extended by using numbers to represent other letters, such as 5EAF00D, or DEC0DE5.
+# Given a string, your task is to return the decimal sum of all words in the string that can be interpreted as such hex values.
+# Example
+# Working with the string BAG OF BEES:
+# BAG ==> 0 as it is not a valid hex value
+
+def hex_word_sum(s):
+  return sum(int(x, 16) for x in s.replace('O', '0').replace('S', '5').split() if all(y in '0123456789ABCDEF' for y in x))
+
 ######################################################################################################################
 
 # Count the number of occurrences of each character and return it as a list of tuples in order of appearance.
@@ -9,8 +21,10 @@ def ordered_count(input):
 ######################################################################################################################
 
 #Kata 6 kyu: Return 1, 2, 3 randomly
-# You have function one_two (oneTwo for Java) that returns 1 or 2 with 50% chance. one_two is already defined in a global scope and can be called everywhere.
-# Your goal is to create function one_two_three (oneTwoThree for Java) that returns 1, 2 or 3 with equal probability using only one_two function.
+# You have function one_two (oneTwo for Java) that returns 1 or 2 with 50% chance. one_two is already defined in a global 
+#scope and can be called everywhere.
+# Your goal is to create function one_two_three (oneTwoThree for Java) that returns 1, 2 or 3 with equal probability 
+#using only one_two function.
 # Do not try to cheat returning repeating non-random sequences. There is randomness test especially for this case.
 
 def one_two_three():
@@ -92,7 +106,8 @@ def max_number(n):
     new = str(n)    #меняем тип
     new = list(map(int, new)) #преобразовываем строку в список чисел
     new = sorted(new, reverse=True) #сортируем по убывани (впринципе задача решена)
-    new2 = ''.join(str(i) for i in new) #в джоине идем по списку и каждую итерацию преобразовываем в str по списку и записываем все в строку
+    new2 = ''.join(str(i) for i in new) #в джоине идем по списку и каждую итерацию преобразовываем в str по списку 
+    #и записываем все в строку
     new2 = int(new2)    #преобразовываем в int
     return new2
 
@@ -109,9 +124,12 @@ def max_number(n):
 # Collect|
 # Your task is to find the first element of an array that is not consecutive.
 # By not consecutive we mean not exactly 1 larger than the previous element of the array.
-# E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
+# E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's
+# the first non-consecutive number.
 # If the whole array is consecutive then return null2.
-# The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
+# The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be 
+#unique and in ascending order. 
+#The numbers could be positive or negative and the first non-consecutive could be either too!
 
 def first_non_consecutive(a):
     i = a[0] 
