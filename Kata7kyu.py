@@ -1,5 +1,22 @@
 ######################################################################################################################
 
+# In this little assignment you are given a string of space separated numbers, and have to return the highest
+# and lowest number.
+# Example:
+# high_and_low("1 2 3 4 5")  # return "5 1"
+# high_and_low("1 2 -3 4 5") # return "5 -3"
+# high_and_low("1 9 3 4 -5") # return "9 -5"
+
+def high_and_low(numbers):
+    new_numbers = list(map(int, (numbers.split(' '))))
+    min_num = str(min(new_numbers))
+    max_num = str(max(new_numbers))
+    result = ''.join(max_num + ' ' + min_num)
+    return result
+
+
+######################################################################################################################
+
 #Kata 6 kyu. Counting Duplicates
 # Count the number of Duplicates
 # Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric 
