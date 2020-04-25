@@ -1,6 +1,24 @@
+#Kata 7 kyu Isograms
+
+# An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that
+# determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. 
+# Ignore letter case.
+# isIsogram "Dermatoglyphics" == true
+# isIsogram "aba" == false
+# isIsogram "moOse" == false -- ignore letter case
+
+import collections
+def is_isogram(string):
+    string = list(string.lower())
+    result = [item for item, count in collections.Counter(string).items() if count > 1]
+    if len(result) == 0:
+        return True
+    else:
+        return False
+
 ######################################################################################################################
 
-#7 kyu Square Every Digit
+#Kata 7 kyu Square Every Digit
 
 # Welcome. In this kata, you are asked to square every digit of a number.
 # For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
