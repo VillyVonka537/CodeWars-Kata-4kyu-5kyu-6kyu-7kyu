@@ -1,3 +1,36 @@
+#Kata 7 kyu Mumbling
+
+# This time no story, no theory. The examples below show you how to write function accum:
+# Examples:
+# accum("abcd") -> "A-Bb-Ccc-Dddd"
+# accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+# accum("cwAt") -> "C-Ww-Aaa-Tttt"
+# The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+def accum(s):
+    result = ""
+    for index, item in enumerate(s):
+        result += item*(index+1) + "-"
+    return result.strip('-').title()
+
+######################################################################################################################
+
+#Kata 7 kyu Vowel Count
+
+# Return the number (count) of vowels in the given string.
+# We will consider a, e, i, o, and u as vowels for this Kata.
+# The input string will only consist of lower case letters and/or spaces.
+
+def getCount(word):
+    vowels = 0
+    for letter in word:
+        if letter.isalpha():
+            if letter.lower() in 'a, e, i, o, u':
+                vowels += 1
+    return vowels
+
+######################################################################################################################
+
 #Kata 7 kyu Jaden Casing Strings
 
 # Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). 
